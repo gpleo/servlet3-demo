@@ -2,6 +2,7 @@ package com.gopersist.demo.servlet3.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -23,10 +24,10 @@ public class DemoServlet2 extends HttpServlet {
 	}
 	
 	@Override
-	public void init() throws ServletException {
+	public void init(ServletConfig servletConfig) throws ServletException {
 		super.init();
 		System.out.println("[DemoServlet2] init()");
-		msg = this.getInitParameter("msg");
+		msg = servletConfig.getInitParameter("msg");
 	}
 	
 	@Override
