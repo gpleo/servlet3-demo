@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       ">
+
+	<!-- 
+	     - 自动扫描com.gopersist.demo.servlet3包，查找@Component注解的类并将其注册为Bean。
+	     - @Controller注解表明类是一个控制器类，它是@Component的一种具体化，
+	     - 其他@Component下的具体注解还有@Service, @Repository。
+	 -->
+    <context:component-scan base-package="com.gopersist.demo.servlet3" />
+    
+    <!-- 启动Spring MVC的注解驱动特性 -->
+    <mvc:annotation-driven />
+    
+    <!-- 
+         - 配置静态资源，路径以/static/开头的为静态资源，并将以/WEB-INF/static/目录下的内容提供服务，
+         - 所以像图片、css、js等都放到这个目录下。
+     -->
+    <mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
+
+	<!-- 
+	     - 配置视图解析器。
+	     - 下面的配置将根据前缀、后缀和逻辑视图名来确定模板的路径。
+	     - 如逻辑视图名为：home，则模板位置：/WEB-INF/jsp/home.jsp
+	 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+</beans>

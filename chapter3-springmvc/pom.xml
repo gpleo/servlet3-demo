@@ -8,10 +8,22 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>chapter2-initializer</artifactId>
+    <artifactId>chapter3-springmvc</artifactId>
     <packaging>war</packaging>
 
     <build>
-        <finalName>chapter2-initializer</finalName>
+        <finalName>chapter3-springmvc</finalName>
     </build>
+    
+    <properties>
+        <spring.version>4.1.4.RELEASE</spring.version>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+    </dependencies>
 </project>
