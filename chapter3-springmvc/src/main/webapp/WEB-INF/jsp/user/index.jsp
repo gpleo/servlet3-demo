@@ -7,9 +7,9 @@
 <title>User List</title>
 </head>
 <body>
-	<p><b>User List</b><a href="?new">Create</a></p>
+	<p><b>User List</b><a href="users?new">Create</a></p>
 	<c:forEach var="user" items="${users}">
-		<p>${user.id}, ${user.username}, ${user.email}</p>
+		<p>${user.id}, ${user.username}, ${user.email} <a href="users/${user.id}">修改</a></p>
 	</c:forEach>
 </body>
 </html>

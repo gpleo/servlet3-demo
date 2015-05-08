@@ -9,9 +9,9 @@
 <body>
 	<p><b>User</b></p>
 	<sf:form method="POST" modelAttribute="user">
-		<p>Username: <sf:input path="username" size="15" /><sf:errors path="username" cssClass="error"/></p>
-		<p>Email: <sf:input path="email" size="30" /><sf:errors path="email" cssClass="error"/></p>
-		<p>Password: <sf:input path="password" showPassword="true" size="30" /><sf:errors path="password" cssClass="error"/></p>
+		<p>Username: <sf:input path="username" size="15" /><sf:errors path="username"/></p>
+		<p>Email: <sf:input path="email" size="30" /><sf:errors path="email"/></p>
+		<p>Password: <sf:input path="password" showPassword="true" size="30" /><sf:errors path="password"/></p>
 		<p><input type="submit" value="保存" /></p>
 	</sf:form>
 </body>
