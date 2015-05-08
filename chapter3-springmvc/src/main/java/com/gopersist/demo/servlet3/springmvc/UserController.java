@@ -83,7 +83,6 @@ public class UserController {
 		
 		if (bindingResult.hasErrors()) {
 			modelAndView.setViewName("user/edit");
-			modelAndView.addObject("user", user);
 			return modelAndView;
 		}
 		
