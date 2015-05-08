@@ -38,7 +38,6 @@ public class UserController {
 		if (bindingResult.hasErrors()) {
 			return "user/edit";
 		}
-		
 		user.setId(User.getNextId());
 		users.add(user);
 		
